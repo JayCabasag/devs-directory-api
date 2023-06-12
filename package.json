@@ -1,10 +1,10 @@
 {
   "name": "devs-directory",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Nest JS Devs Directory API",
+  "author": "Jay Cabasag",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
