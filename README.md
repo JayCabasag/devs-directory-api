@@ -14,9 +14,9 @@ This repository contains the backend API for a developer directory built with Ne
 
 ### Prerequisites
 
-- Node.js (version X.X.X)
-- npm (version X.X.X)
-- MongoDB (version X.X.X)
+- Node.js (version 18.16.0)
+- npm (version 9.6.7)
+- MongoDB (version ^7.2.3)
 
 ### Installation
 
@@ -50,13 +50,11 @@ Here are some examples of how to use the API:
 
 To create a new developer:
 
-http
-Copy code
+```http
 POST /developers
+```
 Request body:
-
 ```json
-Copy code
 {
   "name": "John Doe",
   "skills": ["JavaScript", "Node.js", "React"],
@@ -73,11 +71,13 @@ To search for developers:
 
 ```http
 GET /developers?search=John
+```
 
 To update a developer:
 
 ```http
 PUT /developers/:id
+```
 
 Request body:
 
@@ -91,6 +91,7 @@ To delete a developer:
 
 ```http
 DELETE /developers/:id
+```
 
 Please refer to the API documentation for more details on the available endpoints and their usage.
 
@@ -99,5 +100,3 @@ Contributions to the project are welcome! If you find any issues or have suggest
 
 License
 This project is licensed under the MIT License.
-
-Feel free to modify and customize this README file according to your specific project requirements and add any additional sections or information that might be relevant.
