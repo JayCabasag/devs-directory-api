@@ -1,73 +1,103 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Devs-Directory API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This repository contains the backend API for a developer directory built with NestJS.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Features
 
-## Description
+- User authentication and authorization
+- CRUD operations for developers
+- Search and filtering functionality
+- Pagination of results
+- RESTful API design
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Getting Started
 
-## Installation
+### Prerequisites
 
-```bash
-$ npm install
+- Node.js (version X.X.X)
+- npm (version X.X.X)
+- MongoDB (version X.X.X)
+
+### Installation
+
+1. Clone the repository:
+
+   ```shell
+   git clone https://github.com/your-username/devs-directory-api.git
+Install the dependencies:
+
+```shell
+cd devs-directory-api
+npm install
 ```
 
-## Running the app
+Set up the environment variables:
 
-```bash
-# development
-$ npm run start
+Rename the .env.example file to .env.
+Open the .env file and update the variables with your own values.
+Start the application:
 
-# watch mode
-$ npm run start:dev
+```shell
+npm run start:dev
+```
+The API will be available at http://localhost:3000.
 
-# production mode
-$ npm run start:prod
+API Documentation
+The API endpoints and their usage are documented using OpenAPI (Swagger) specification. After starting the application, you can access the Swagger UI documentation at http://localhost:3000/docs to explore and test the API.
+
+Usage and Examples
+Here are some examples of how to use the API:
+
+To create a new developer:
+
+http
+Copy code
+POST /developers
+Request body:
+
+```json
+Copy code
+{
+  "name": "John Doe",
+  "skills": ["JavaScript", "Node.js", "React"],
+  "location": "San Francisco"
+}
 ```
 
-## Test
+To get a list of developers:
 
-```bash
-# unit tests
-$ npm run test
+```http
+GET /developers
+```
+To search for developers:
 
-# e2e tests
-$ npm run test:e2e
+```http
+GET /developers?search=John
 
-# test coverage
-$ npm run test:cov
+To update a developer:
+
+```http
+PUT /developers/:id
+
+Request body:
+
+```json
+{
+  "skills": ["JavaScript", "Node.js", "Angular"]
+}
 ```
 
-## Support
+To delete a developer:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```http
+DELETE /developers/:id
 
-## Stay in touch
+Please refer to the API documentation for more details on the available endpoints and their usage.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Contribution
+Contributions to the project are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
-## License
+License
+This project is licensed under the MIT License.
 
-Nest is [MIT licensed](LICENSE).
+Feel free to modify and customize this README file according to your specific project requirements and add any additional sections or information that might be relevant.
