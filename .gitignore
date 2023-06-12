@@ -1,5 +1,5 @@
 # compiled output
-/dist
+# /dist I uncomment this for cyclic only
 /node_modules
 
 # Logs
