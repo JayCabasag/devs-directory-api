@@ -1,13 +1,12 @@
 import { HttpException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Developer } from './schemas/Developer.schema';
 import * as mongoose from 'mongoose';
-import { DeleteDeveloperDto } from 'src/dto/delete-developer.dto';
+import { Developer } from './interfaces/developers.interface';
 
 @Injectable()
 export class DevelopersService {
     constructor(
-        @InjectModel(Developer.name)
+        @InjectModel('DEVELOPER_MODEL')
         private developerModel: mongoose.Model<Developer>
     ) { }
 
