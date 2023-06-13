@@ -25,69 +25,11 @@
 import { Connection } from 'mongoose';
 export declare const developersProviders: {
     provide: string;
-    useFactory: (connection: Connection) => import("mongoose").Model<{
-        languages: string[];
-        name?: string;
-        age?: number;
-        username?: string;
-        fullname?: string;
-        title?: string;
-        quote?: string;
-        experience?: string;
-        salary?: number;
-    }, {}, {}, {}, import("mongoose").Document<unknown, {}, {
-        languages: string[];
-        name?: string;
-        age?: number;
-        username?: string;
-        fullname?: string;
-        title?: string;
-        quote?: string;
-        experience?: string;
-        salary?: number;
-    }> & Omit<{
-        languages: string[];
-        name?: string;
-        age?: number;
-        username?: string;
-        fullname?: string;
-        title?: string;
-        quote?: string;
-        experience?: string;
-        salary?: number;
-    } & {
+    useFactory: (connection: Connection) => import("mongoose").Model<import("../schemas/developer.schema").Developer, {}, {}, {}, import("mongoose").Document<unknown, {}, import("../schemas/developer.schema").Developer> & Omit<import("../schemas/developer.schema").Developer & {
         _id: import("mongoose").Types.ObjectId;
-    }, never>, import("mongoose").Schema<any, import("mongoose").Model<any, any, any, any, any, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, {
-        languages: string[];
-        name?: string;
-        age?: number;
-        username?: string;
-        fullname?: string;
-        title?: string;
-        quote?: string;
-        experience?: string;
-        salary?: number;
-    }, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<{
-        languages: string[];
-        name?: string;
-        age?: number;
-        username?: string;
-        fullname?: string;
-        title?: string;
-        quote?: string;
-        experience?: string;
-        salary?: number;
-    }>> & Omit<import("mongoose").FlatRecord<{
-        languages: string[];
-        name?: string;
-        age?: number;
-        username?: string;
-        fullname?: string;
-        title?: string;
-        quote?: string;
-        experience?: string;
-        salary?: number;
-    }> & {
+    }, never>, import("mongoose").Schema<import("../schemas/developer.schema").Developer, import("mongoose").Model<import("../schemas/developer.schema").Developer, any, any, any, import("mongoose").Document<unknown, any, import("../schemas/developer.schema").Developer> & Omit<import("../schemas/developer.schema").Developer & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, import("../schemas/developer.schema").Developer, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<import("../schemas/developer.schema").Developer>> & Omit<import("mongoose").FlatRecord<import("../schemas/developer.schema").Developer> & {
         _id: import("mongoose").Types.ObjectId;
     }, never>>>;
     inject: string[];

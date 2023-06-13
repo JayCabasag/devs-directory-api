@@ -10,18 +10,20 @@ exports.DeveloperModule = void 0;
 const common_1 = require("@nestjs/common");
 const developer_controller_1 = require("./developer.controller");
 const developer_service_1 = require("./developer.service");
-const database_module_1 = require("../database/database.module");
-const developers_providers_1 = require("./providers/developers.providers");
+const mongoose_1 = require("@nestjs/mongoose");
+const developer_schema_1 = require("./schemas/developer.schema");
 let DeveloperModule = exports.DeveloperModule = class DeveloperModule {
 };
 exports.DeveloperModule = DeveloperModule = __decorate([
     (0, common_1.Module)({
-        imports: [database_module_1.DatabaseModule],
+        imports: [mongoose_1.MongooseModule.forFeature([
+                {
+                    name: 'Developer',
+                    schema: developer_schema_1.DeveloperSchema
+                }
+            ])],
         controllers: [developer_controller_1.DeveloperController],
-        providers: [
-            developer_service_1.DeveloperService,
-            ...developers_providers_1.developersProviders,
-        ]
+        providers: [developer_service_1.DeveloperService]
     })
 ], DeveloperModule);
 //# sourceMappingURL=developer.module.js.map

@@ -1,13 +1,31 @@
-import * as mongoose from 'mongoose';
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 
-export const DeveloperSchema = new mongoose.Schema({
-    name: String,
-    age: Number,
-    username: String,
-    fullname: String,
-    title: String,
-    languages: [String],
-    quote: String,
-    experience: String,
-    salary: Number
-});
+@Schema({
+    timestamps: true
+})
+
+export class Developer {
+    @Prop()
+    username: string;
+
+    @Prop()
+    fullname: string;
+
+    @Prop()
+    title: string;
+
+    @Prop()
+    languages: string[];
+
+    @Prop()
+    quote: string;
+
+    @Prop()
+    experience: string;
+
+    @Prop()
+    salary: number;
+}
+
+export const DeveloperSchema =
+    SchemaFactory.createForClass(Developer)

@@ -1,11 +1,12 @@
 import { Injectable, Inject, HttpException, NotFoundException, HttpStatus } from '@nestjs/common';
-import { Model } from 'mongoose';
-import { Developer } from './interfaces/developers.interface';
+import mongoose, { Model } from 'mongoose';
+import { InjectModel } from '@nestjs/mongoose';
+import { Developer } from './schemas/developer.schema';
 @Injectable()
 export class DeveloperService {
     constructor(
-        @Inject('DEVELOPER_MODEL')
-        private developerModel: Model<Developer>,
+        @InjectModel(Developer.name)
+        private developerModel: mongoose.Model<Developer>
     ) { }
 
     async findAll(): Promise<Developer[]> {
@@ -65,5 +66,4 @@ export class DeveloperService {
         })
         return result
     }
-
 }

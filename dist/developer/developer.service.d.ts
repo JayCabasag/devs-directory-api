@@ -1,8 +1,8 @@
-import { Model } from 'mongoose';
-import { Developer } from './interfaces/developers.interface';
+import mongoose from 'mongoose';
+import { Developer } from './schemas/developer.schema';
 export declare class DeveloperService {
     private developerModel;
-    constructor(developerModel: Model<Developer>);
+    constructor(developerModel: mongoose.Model<Developer>);
     findAll(): Promise<Developer[]>;
     create(developer: Developer): Promise<Developer>;
     findById(id: string): Promise<Developer>;

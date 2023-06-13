@@ -15,6 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeveloperService = void 0;
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("mongoose");
+const mongoose_2 = require("@nestjs/mongoose");
+const developer_schema_1 = require("./schemas/developer.schema");
 let DeveloperService = exports.DeveloperService = class DeveloperService {
     constructor(developerModel) {
         this.developerModel = developerModel;
@@ -69,7 +71,7 @@ let DeveloperService = exports.DeveloperService = class DeveloperService {
 };
 exports.DeveloperService = DeveloperService = __decorate([
     (0, common_1.Injectable)(),
-    __param(0, (0, common_1.Inject)('DEVELOPER_MODEL')),
-    __metadata("design:paramtypes", [mongoose_1.Model])
+    __param(0, (0, mongoose_2.InjectModel)(developer_schema_1.Developer.name)),
+    __metadata("design:paramtypes", [mongoose_1.default.Model])
 ], DeveloperService);
 //# sourceMappingURL=developer.service.js.map

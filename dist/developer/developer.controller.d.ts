@@ -1,7 +1,11 @@
-import { DevelopersService } from 'src/developers2/developers.service';
-import { Developer } from './interfaces/developers.interface';
+import { DeveloperService } from './developer.service';
+import { Developer } from './schemas/developer.schema';
 export declare class DeveloperController {
     private developerService;
-    constructor(developerService: DevelopersService);
-    getAllDevelopers(term: string): Promise<Developer[]>;
+    constructor(developerService: DeveloperService);
+    getAllDevelopers(term: string): Promise<any[]>;
+    createDeveloper(developer: Developer): Promise<Developer>;
+    getDeveloperById(id: string): Promise<Developer>;
+    updateDeveloper(id: string, developer: Developer): Promise<Developer>;
+    deleteDeveloper(id: string): Promise<Developer>;
 }
