@@ -6,13 +6,13 @@ import { Developer } from './schemas/developer.schema';
 export class DeveloperController {
     constructor(private developerService: DeveloperService) { }
     @Get()
-    async getAllDevelopers(@Query('search') term: string): Promise<any[]> {
+    async getAllDevelopers(@Query('search') term: string): Promise<{ developers: Developer[] }> {
         if (term) {
             const searchRes = await this.developerService.search(term)
-            return searchRes
+            return { developers: searchRes }
         }
         const res = await this.developerService.findAll()
-        return res
+        return { developers: res }
     }
 
     @Post('new')

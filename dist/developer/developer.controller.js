@@ -23,10 +23,10 @@ let DeveloperController = exports.DeveloperController = class DeveloperControlle
     async getAllDevelopers(term) {
         if (term) {
             const searchRes = await this.developerService.search(term);
-            return searchRes;
+            return { developers: searchRes };
         }
         const res = await this.developerService.findAll();
-        return res;
+        return { developers: res };
     }
     async createDeveloper(developer) {
         const username = developer.username;
